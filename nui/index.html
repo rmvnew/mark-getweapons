@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    
+    <div class="container" id="container">
+
+        <div class="painel">
+
+            <div class="title_main">
+                <h2>Armas</h2>
+            </div>
+
+            <div class="weapon_register">
+                <div class="weapon_item">
+                    <label>Nome da arma</label>
+                    <input type="text" placeholder="Nome" id="weapon_name">
+                </div>
+                
+                <div class="weapon_item">
+                    <label>Apelido da arma</label>
+                    <input type="text" placeholder="Apelido" id="weapon_name">
+                </div>
+                <button>Cadastrar</button>
+            </div>
+
+            <div class="weapon_select">
+                <div>
+                    <h3>Armas Cadastradas</h3>
+                    <table>
+                        <thead>
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>Apelido</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>01</td>
+                                <td>WEDFSTRRFRFRFRRF</td>
+                                <td>G3</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="weapon_item">
+                    <label>Arma escolhida</label>
+                    <input type="text" id="selected_weapon">
+                </div>
+                <div class="for_me">
+                    <button>Pegar arma</button>
+                </div>
+                <div class="for_user">
+                    <label>ID do player</label>
+                    <input type="text" id="user_id">
+                    <button>Enviar arma</button>
+                </div>
+
+                
+            </div>
+
+
+        </div>
+
+    </div>
+
+</body>
+</html>
