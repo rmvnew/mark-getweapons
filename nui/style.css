@@ -77,14 +77,13 @@
     padding-bottom: 5px;
 }
 
-.weapon_register, .weapon_select {
-    margin-top: 20px;
-}
+
 
 .weapon_item {
     display: flex;
     flex-direction: column;
     margin-bottom: 15px;
+    margin-top: 20px;
 }
 
 .weapon_item label {
@@ -137,6 +136,16 @@ button:active {
     border-bottom: 2px solid #3498db;
 }
 
+
+
+.table-container {
+    max-width: 100%; /* Limita a largura total do contêiner */
+    max-height: 400px; /* Limita a altura do contêiner */
+    overflow-x: auto; /* Ativa o scroll horizontal, se necessário */
+    overflow-y: auto; /* Ativa o scroll vertical, se necessário */
+    border: 1px solid #7f8c8d; /* Opcional: borda ao redor do contêiner */
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -148,6 +157,9 @@ table thead th {
     color: #ecf0f1;
     padding: 10px;
     text-align: left;
+    position: sticky;
+    top: 0; /* Mantém os cabeçalhos fixos durante o scroll vertical */
+    z-index: 1;
 }
 
 table tbody td {
