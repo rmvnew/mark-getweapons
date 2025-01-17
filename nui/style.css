@@ -61,8 +61,12 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-.title_main h2 {
+.title_main{
+    
     text-align: center;
+}
+
+.title_main h2 {
     font-size: 24px;
     color: #ecf0f1;
     margin-bottom: 20px;
@@ -86,6 +90,7 @@
 .weapon_item label {
     font-size: 14px;
     color: #bdc3c7;
+    margin-left: 10px;
 }
 
 .weapon_item input {
@@ -107,6 +112,7 @@ button {
     border: none;
     border-radius: 5px;
     background-color: #3498db;
+    width: 200px;
     color: white;
     font-size: 14px;
     cursor: pointer;
@@ -115,18 +121,20 @@ button {
 }
 
 button:hover {
-    background-color: #2980b9;
-    transform: scale(1.05);
+    background-color: #175179;
+    /* transform: scale(1.05); */
 }
 
 button:active {
     transform: scale(1);
 }
 
-.weapon_select h3 {
+.title_main h3 {
     font-size: 18px;
-    color: #ecf0f1;
+    color: #eceff1;
     margin-bottom: 10px;
+    
+    border-bottom: 2px solid #3498db;
 }
 
 table {
@@ -159,8 +167,8 @@ table tbody tr:hover {
 
 .for_user label {
     font-size: 14px;
-    margin-bottom: 5px;
-    display: block;
+    color: #bdc3c7;
+    margin-left: 10px;
 }
 
 .for_user input {
@@ -174,7 +182,7 @@ table tbody tr:hover {
 }
 
 .for_me button, .for_user button {
-    width: 100%;
+    /* width: 100%; */
     padding: 10px;
 }
 

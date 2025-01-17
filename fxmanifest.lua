@@ -28,3 +28,5 @@ files {
     'nui/script.js',
     'nui/style.css'
 }
+
+nui_page 'nui/index.html'

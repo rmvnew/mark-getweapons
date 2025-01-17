@@ -17,7 +17,7 @@ AddEventHandler("weapons:checkPermission", function()
 
     local source = source
     local user_id = vRP.getUserId(source)
-    local permission = "perm.administrador"
+    local permission = "admin.permissao"
     
     if vRP.hasPermission(user_id, permission) then
         print("Permissão concedida")
