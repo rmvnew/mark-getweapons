@@ -6,6 +6,7 @@ src = {}
 Tunnel.bindInterface("weapons",src)
 vSERVER = Tunnel.getInterface("weapons")
 
+-- chama a função para ver se tem permissao no servidor
 RegisterCommand('getarmas', function()
     print("Comando /getarmas acionado!")
     print("Enviando TriggerServerEvent 'weapons:checkPermission'...") -- Log antes
@@ -13,23 +14,34 @@ RegisterCommand('getarmas', function()
     print("TriggerServerEvent 'weapons:checkPermission' enviado.") -- Log depois
 end)
 
+-- abre a NUI se tem permissao
 RegisterNetEvent("weapons:openNUI")
 AddEventHandler("weapons:openNUI", function()
     SendNUIMessage({hasPermission = 'open'})
     SetNuiFocus(true, true)
 end)
 
+-- fecha se não tem permissao
 RegisterNetEvent("weapons:closeNUI")
 AddEventHandler("weapons:closeNUI", function()
+    SetNuiFocus(false,false)
     SendNUIMessage({hasPermission = 'closed'})
 end)
 
+-- fecha com ESC
 RegisterNUICallback("closeCurrentNUI",function(data,cb)
     SetNuiFocus(false,false)
     SendNUIMessage({hasPermission = 'closed'})
     if cb then cb('ok') end
 end)
 
+-- Emite o sinal de sucesso
+RegisterNetEvent("weapons:alertSuccess")
+AddEventHandler("weapons:alertSuccess",function(source)
+
+    PlaySoundFrontend(-1, "PICK_UP", "HUD_FRONTEND_DEFAULT_SOUNDSET", true)
+
+end)
 
 
 RegisterNUICallback("testecallback",function(data,cb)
@@ -37,3 +49,5 @@ RegisterNUICallback("testecallback",function(data,cb)
     print("$$$$$$$$$$$$$$$$$$"..json.encode(data))
 
 end)
+
+
