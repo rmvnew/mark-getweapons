@@ -26,7 +26,8 @@ server_scripts {
 files {
     'nui/index.html',
     'nui/script.js',
-    'nui/style.css'
+    'nui/style.css',
+    'nui/assets/wallpaper.png'
 }
 
 nui_page 'nui/index.html'

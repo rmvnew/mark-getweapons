@@ -94,6 +94,8 @@ end)
 
 RegisterNUICallback("failNotify",function(message)
 
+    
+
     TriggerEvent("Notify","negado",message)
 
 end)

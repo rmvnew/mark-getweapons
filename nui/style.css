@@ -1,44 +1,9 @@
-/* 
-
-.painel{
-    margin-top: 60px;
-    background-color: rgba(0, 0,0, 0.8);
-    padding: 20px;
-    border-radius: 7px;
-    width: 300px;
-    color: white;
-}
-
-.title_main{
-    text-align: center;
-}
-
-.weapon_register{
-    display: flex;
-    flex-direction: column;
-}
-
-.weapon_item{
-    display: flex;
-    flex-direction: column;
-}
-
-.weapon_item label{
-    margin-left: 5px;
-    margin-bottom: 5px;
-}
-
-.weapon_item input{
-    margin-bottom: 10px;
-}
- */
 
 
 
 
  body {
     font-family: Arial, sans-serif;
-    /* background: linear-gradient(to bottom right, #2c3e50, #34495e); */
     margin: 0;
     padding: 0;
     display: flex;
@@ -53,13 +18,26 @@
     max-width: 800px;
 }
 
-.painel {
+/* .painel {
     margin-top: 20px;
+    background-image: url('./assets/wallpaper.jpg');
     background-color: rgba(0, 0, 0, 0.9);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+} */
+
+.painel {
+    margin-top: 20px;
+    background-image: url('http://127.0.0.1/ultimate/logos/wallpaper.png');
+    background-size: cover; /* Garante que a imagem preencha o painel */
+    background-position: center; /* Centraliza a imagem */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    /* background-color: rgba(0, 0, 0, 0.9); */ /* Mantenha comentado para não escurecer a imagem */
 }
+
 
 .title_main{
     
@@ -67,14 +45,16 @@
 }
 
 .title_main h2 {
-    font-size: 24px;
-    color: #ecf0f1;
+    font-size: 1.8rem;
+    
+    color: #ffffff;
     margin-bottom: 20px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    border-bottom: 2px solid #3498db;
+    border-bottom: 2px solid #024b7c;
     display: inline-block;
     padding-bottom: 5px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
 }
 
 
@@ -94,9 +74,10 @@
 }
 
 .weapon_item label {
-    font-size: 14px;
-    color: #bdc3c7;
+    font-size: 1.3rem;
+    color: #ffffff;
     margin-left: 10px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
 }
 
 .weapon_item input {
