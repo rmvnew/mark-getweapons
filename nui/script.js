@@ -23,6 +23,7 @@ $(document).ready(()=>{
 $(document).keyup((event)=>{
     if(event.key === 'Escape'){
 
+        clear()
         fetch(`https://weapons/closeCurrentNUI`, {
             method: 'POST',
             headers: {
@@ -39,11 +40,9 @@ $(document).keyup((event)=>{
 })
 
 
-function registerWeapon(){
+function getWeapon(){
 
-    const weapon_name = document.getElementById('weapon_name').value
-
-
+    const weapon_name = document.getElementById("selected_weapon").value
 
     let config = {
         method: 'POST',
@@ -52,10 +51,17 @@ function registerWeapon(){
         },
         body: JSON.stringify({weapon_name})
     }
-    fetch(`https://${GetParentResourceName()}/testecallback`, config)
+    fetch(`https://${GetParentResourceName()}/getWeapon`, config)
 
 }
 
+function clear(){
+
+    const input = document.getElementById("selected_weapon")
+    input.value = ''
+
+
+}
 
 
 // mostra armas na tabela

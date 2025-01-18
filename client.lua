@@ -44,9 +44,11 @@ AddEventHandler("weapons:alertSuccess",function(source)
 end)
 
 
-RegisterNUICallback("testecallback",function(data,cb)
+RegisterNUICallback("getWeapon",function(data,cb)
 
-    print("$$$$$$$$$$$$$$$$$$"..json.encode(data))
+    local weaponName = json.encode(data)
+   
+    TriggerServerEvent("weapons:getCurrentWeapon",weaponName)
 
 end)
 
