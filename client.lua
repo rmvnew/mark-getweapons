@@ -52,17 +52,48 @@ RegisterNUICallback("getWeapon",function(data,cb)
 
 end)
 
-
+-- pegando todas armas
 RegisterNUICallback("getAllWeapons",function()
 
     TriggerServerEvent("weapons:getAllWeapons")
 
 end)
 
+-- removendo todas armas
 RegisterNUICallback("remAllWeapons",function()
 
     TriggerServerEvent("weapons:remAllWeapons")
 
 end)
 
+-- iniciando envio de armas para player
+RegisterNUICallback("sendWeapon",function(data)
 
+    local current_data = json.encode(data)
+    
+    TriggerServerEvent("weapons:sendWeapon",current_data)
+    
+end)
+
+-- enviando arma para player
+RegisterNetEvent("weapons:sendWeaponResponse",function(current_data)
+
+    local data = json.decode(current_data)
+    local weaponHash = GetHashKey(data.current_weapon)
+
+    if weaponHash then 
+    
+        GiveWeaponToPed(data.player_id, weaponHash, 250, true, true)
+        TriggerEvent("Notify", "sucesso", "Você recebeu a arma: " .. data.current_weapon)
+    else    
+        TriggerEvent("Notify", "negado", "Arma inválida!")
+    end
+    
+
+end)
+
+RegisterNUICallback("failNotify",function(message)
+
+    TriggerEvent("Notify","negado",message)
+
+end)

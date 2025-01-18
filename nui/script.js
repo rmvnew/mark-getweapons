@@ -42,16 +42,34 @@ $(document).keyup((event)=>{
 // pegar uma arma
 function getWeapon(){
 
-    const weapon_name = document.getElementById("selected_weapon").value
+    console.log('Pegar arma');
 
-    let config = {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json; charset=UTF-8',
-        },
-        body: JSON.stringify({weapon_name})
+    const weapon_name = document.getElementById("selected_weapon").value
+    const message = "Selecione uma arma para usar esse recurso"
+
+    if(weapon_name){
+
+        let config = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json; charset=UTF-8',
+            },
+            body: JSON.stringify({weapon_name})
+        }
+        fetch(`https://${GetParentResourceName()}/getWeapon`, config)
+
+    }else{
+
+
+        let config = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json; charset=UTF-8',
+            },
+            body: JSON.stringify(message)
+        }
+        fetch(`https://${GetParentResourceName()}/failNotify`, config)
     }
-    fetch(`https://${GetParentResourceName()}/getWeapon`, config)
 
 }
 
@@ -81,6 +99,39 @@ function remAllWeapons(){
         body: JSON.stringify('')
     }
     fetch(`https://${GetParentResourceName()}/remAllWeapons`, config)
+
+}
+
+// enviar arma para player
+function sendWeaponToPlayer(){
+
+    console.log('Arma para player');
+    
+
+    const player_id = document.getElementById('user_id').value
+    const current_weapon = document.getElementById('selected_weapon').value
+    const message = "Selecione uma arma e informe o id do player para usar esse recurso"
+
+    if(player_id && current_weapon){
+        let config = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json; charset=UTF-8',
+            },
+            body: JSON.stringify({player_id,current_weapon})
+        }
+        fetch(`https://${GetParentResourceName()}/sendWeapon`, config)
+    }else{
+
+        let config = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json; charset=UTF-8',
+            },
+            body: JSON.stringify(message)
+        }
+        fetch(`https://${GetParentResourceName()}/failNotify`, config)
+    }
 
 }
 

@@ -43,6 +43,7 @@ AddEventHandler("weapons:getCurrentWeapon",function(weaponName)
     
         vRPclient.giveWeapons(source,{[name.weapon_name]={ammo = 250}},true)
         TriggerClientEvent("Notify",source,"sucesso","Arma equipada com sucesso!") 
+        TriggerClientEvent("weapons:alertSuccess",source)
     else
         TriggerClientEvent("Notify",source,"negado","Arma não pode ser equipada!") 
     end
@@ -65,6 +66,23 @@ AddEventHandler("weapons:remAllWeapons",function()
 
 end)
 
+
+RegisterNetEvent("weapons:sendWeapon")
+AddEventHandler("weapons:sendWeapon",function(current_data)
+
+    local source = source
+    local user_id = vRP.getUserId(source)
+    local permission = "admin.permissao"
+
+    if vRP.hasPermission(user_id,permission) then 
+        TriggerClientEvent("Notify",source,"sucesso","Operação executada com sucesso!") 
+        TriggerClientEvent("weapons:sendWeaponResponse",source,current_data)
+        TriggerClientEvent("weapons:alertSuccess",source)
+    else
+        TriggerClientEvent("Notify",source,"negado","Não tem permissao para realizar essa operação!") 
+    end
+
+end)
 
 
 -- comando para adm pegar todas as armas na mão
