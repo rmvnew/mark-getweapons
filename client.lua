@@ -53,3 +53,16 @@ RegisterNUICallback("getWeapon",function(data,cb)
 end)
 
 
+RegisterNUICallback("getAllWeapons",function()
+
+    TriggerServerEvent("weapons:getAllWeapons")
+
+end)
+
+RegisterNUICallback("remAllWeapons",function()
+
+    TriggerServerEvent("weapons:remAllWeapons")
+
+end)
+
+

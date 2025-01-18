@@ -81,9 +81,16 @@
 
 .weapon_item {
     display: flex;
+    width: 100%;
     flex-direction: column;
     margin-bottom: 15px;
     margin-top: 20px;
+    align-content: space-around;
+}
+
+.weapon_item input{
+    width: 300px;
+    margin-bottom: 10px;
 }
 
 .weapon_item label {
@@ -173,7 +180,7 @@ table tbody tr:hover {
     background-color: #3e5363;
 }
 
-.for_me, .for_user {
+.for_user {
     margin-top: 10px;
 }
 
@@ -193,11 +200,29 @@ table tbody tr:hover {
     margin-bottom: 10px;
 }
 
-.for_me button, .for_user button {
+.for_user button {
     /* width: 100%; */
     padding: 10px;
 }
 
 #container{
     display: none;
+}
+
+.options{
+    display: flex;
+}
+
+.options button{
+    margin-right: 20px;
+}
+
+#getall{
+    background-color: #003852;
+    white-space: nowrap;
+}
+
+#remall{
+    background-color: #520000;
+    white-space: nowrap;
 }

@@ -49,9 +49,42 @@ AddEventHandler("weapons:getCurrentWeapon",function(weaponName)
 
 end)
 
+RegisterNetEvent("weapons:getAllWeapons")
+AddEventHandler("weapons:getAllWeapons",function()
+
+    local source = source
+    getAllWeapons(source)
+
+end)
+
+RegisterNetEvent("weapons:remAllWeapons")
+AddEventHandler("weapons:remAllWeapons",function()
+
+    local source = source
+    remAllWeapons(source)
+
+end)
+
+
+
 -- comando para adm pegar todas as armas na mão
 RegisterCommand("getallarmas",function(source)
  
+    getAllWeapons(source)
+    
+end)
+
+-- remove todas armas da mão do adm
+RegisterCommand("noarmas",function(source)
+
+   remAllWeapons(source)
+
+end)
+
+
+
+function getAllWeapons(source)
+
     local user_id = vRP.getUserId(source)
     local permission = "admin.permissao"
     if vRP.hasPermission(user_id,permission) then 
@@ -159,12 +192,12 @@ RegisterCommand("getallarmas",function(source)
         TriggerClientEvent("Notify", source, "negado", "Você não tem permissão para acessar este recurso", 10)
     end
 
-    
 
-end)
 
--- remove todas armas da mão do adm
-RegisterCommand("noarmas",function(source)
+end
+
+
+function remAllWeapons(source)
 
     local user_id = vRP.getUserId(source)
     local permission = "admin.permissao"    
@@ -178,4 +211,4 @@ RegisterCommand("noarmas",function(source)
         TriggerClientEvent("Notify", source, "negado", "Você não tem permissão para acessar este recurso", 10)
     end
 
-end)
+end

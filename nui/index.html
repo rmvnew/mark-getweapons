@@ -30,17 +30,22 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="weapon_item">
-                    <label>Arma escolhida</label>
-                    <input type="text" id="selected_weapon">
+                <div class="options">
+                    <div class="weapon_item">
+                        <label>Arma escolhida</label>
+                        <input type="text" id="selected_weapon">
+                        <button onclick="getWeapon()">Pegar arma</button>
+                    </div>
+                   
+                    <div class="weapon_item">
+                        <label>ID do player</label>
+                        <input type="text" id="user_id">
+                        <button>Enviar arma</button>
+                    </div>
                 </div>
-                <div class="for_me">
-                    <button onclick="getWeapon()">Pegar arma</button>
-                </div>
-                <div class="for_user">
-                    <label>ID do player</label>
-                    <input type="text" id="user_id">
-                    <button>Enviar arma</button>
+                <div class="options">
+                    <button id="getall" onclick="getAllWeapons()">Pegar Todas Armas</button>
+                    <button id="remall" onclick="remAllWeapons()">Remover Todas Armas</button>
                 </div>
 
                 
